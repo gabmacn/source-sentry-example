@@ -4,4 +4,4 @@
 RETAINED_FIELDS = ["timestamp", "path", "status"]
 
 # How long request records are kept, in days.
-RETENTION_DAYS = 30
+RETENTION_DAYS = 90
