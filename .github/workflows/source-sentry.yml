@@ -52,7 +52,7 @@ jobs:
       - name: Install Source Sentry
         env:
           SOURCE_SENTRY_VERSION: '0.1.0-rc.3' # REPLACE: a released version, such as 0.1.0, without the leading v.
-          SOURCE_SENTRY_SHA256_X86_64: '91e8c9593e7bbe3160e95d9fe23704af98f83aa632dc5ed7e1a97e09a9eb55ec' # REPLACE: the x86_64 archive's SHA-256, from SHA256SUMS.
+          SOURCE_SENTRY_SHA256_X86_64: '1111111111111111111111111111111111111111111111111111111111111111' # REPLACE: the x86_64 archive's SHA-256, from SHA256SUMS.
           SOURCE_SENTRY_SHA256_AARCH64: '87caf3f7b6cebf0c0fd4541a65bfffbbf34cd7c3f7ecce614b0ec93188092229' # REPLACE: the aarch64 archive's SHA-256, from SHA256SUMS.
           # Where the archives are downloaded from: git.gabmacn.com, or a copy
           # of a release's files. The checksums apply either way.
