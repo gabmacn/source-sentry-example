@@ -1,0 +1,33 @@
+# Source Sentry's project config. structure/repository-config.example.yaml in
+# Source Sentry's repository explains every key.
+version: 1
+time-zone: 'UTC'
+
+define:
+  classes:
+    privacy:
+      description: 'Describes the personal data that the service retains.'
+  contexts:
+    # Pull requests and ordinary pushes: a document is due as soon as its
+    # sources change, and a due document warns.
+    default:
+      fallback: warn
+      rules:
+        - facts: ['stale', 'upstream-stale']
+          outcome: notice
+        - facts: ['missed']
+          outcome: notice
+    # Deploys: a privacy policy that does not match the code blocks them.
+    production:
+      fallback: warn
+      rules:
+        - facts: ['missed']
+          outcome: notice
+        - classes: ['privacy']
+          facts: ['stale', 'due', 'overdue', 'unattested', 'timing-unknown',
+                  'upstream-stale', 'upstream-due']
+          outcome: fail
+
+documents:
+  # This repository's README describes the example, not the service.
+  ignore: ['/README.md']
